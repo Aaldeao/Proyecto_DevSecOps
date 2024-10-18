@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Preuniversitario Top Education</title>
+</head>
+<body style="text-align: center;">
+
+<h1 th:text="'Top Education Chile 2023'"></h1>
+<h3> Haga click en el botón del servicio que desea</h3>
+
+<div style="display: inline-block; text-align: left;">
+    <form action="/Formulario">
+        <button type="submit">Añadir Estudiantes</button>
+    </form>
+</div>
+
+<div style="display: inline-block; text-align: left;">
+    <form action="/GeneradorCuotas">
+        <button type="submit">Generar Cuotas</button>
+    </form>
+</div>
+
+<div style="display: inline-block; text-align: left;">
+    <form action="/Buscarcliente">
+        <button type="submit">Mostrar Cuotas</button>
+    </form>
+</div>
+
+<div style="display: inline-block; text-align: left;">
+    <form action="/subirArchivoExcel">
+        <button type="submit">Subir Archivo</button>
+    </form>
+</div>
+
+<div style="display: inline-block; text-align: left;">
+    <form action="/Reporte">
+        <button type="submit">Mostrar Estudiante</button>
+    </form>
+</div>
+
+</body>
+</html>

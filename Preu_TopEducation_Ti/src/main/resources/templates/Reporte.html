@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <title>Reporte del Estudiante</title>
+    <meta http-equiv= "Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+<div class="container-sm">
+    <h1 class = "text-center">Reporte del estudiante</h1>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th>Rut</th>
+            <th>Nombre</th>
+            <th>Examenes rendidos</th>
+            <th>Promedio puntaje examenes</th>
+            <th>Total arancel a pagar</th>
+            <th>Tipo de pago</th>
+            <th>Total de cuotas pactadas</th>
+            <th>Cuotas pagadas </th>
+            <th>Cuotas con retraso</th>
+            <th>Monto total pagado</th>
+            <th>Saldo por pagar</th>
+            <th>Fecha de la ultima cuota de pago</th>
+
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="reporte : ${reporte}">
+            <td th:text="${reporte.rut}"></td>
+            <td th:text="${reporte.Nombre}"></td>
+            <td th:text="${reporte.examenesRendidos}"></td>
+            <td th:text="${reporte.promedioPuntaje}"></td>
+            <td th:text="${reporte.arancel}"></td>
+            <td th:text="${reporte.tipoPago}"></td>
+            <td th:text="${reporte.cuotasPactadas}"></td>
+            <td th:text="${reporte.cuotasPagadas}"></td>
+            <td th:text="${reporte.cuotasAtrasadas}"></td>
+            <td th:text="${reporte.montoPagado}"></td>
+            <td th:text="${reporte.saldoaPagar}"></td>
+            <td th:text="${reporte.fechaUltimo}"></td>
+        </tbody>
+
+    </table>
+</div>
+<div class="d-flex justify-content-center align-items-center">
+    <form action="/Inicio">
+        <button type="submit" class="btn btn-primary" >Volver al inicio</button>
+    </form>
+</div>
+</body>
+</html>

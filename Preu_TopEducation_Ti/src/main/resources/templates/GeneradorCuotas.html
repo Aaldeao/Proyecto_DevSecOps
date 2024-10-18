@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generador de cuotas</title>
+</head>
+<body>
+    <h1>Generador de Cuotas</h1>
+    <form action="/guardarCuota" method="post" style="display: inline;">
+        <table>
+            <tr>
+                <td><label for="rut">RUT del Estudiante:</label></td>
+                <td><input type="text" id="rut" name="rut" required></td>
+            </tr>
+            <tr>
+                <td><label for="cantidad">Cantidad de Cuotas:</label></td>
+                <td><input type="number" id="cantidad" name="cantidad" required max="10" min="1"></td>
+            </tr>
+
+        </table>
+        <button type="submit">Guardar Cuota</button>
+    </form>
+    <form action="/Inicio"style="display: inline;">
+        <button type="submit">Volver al inicio</button>
+    </form>
+</body>
+</html>

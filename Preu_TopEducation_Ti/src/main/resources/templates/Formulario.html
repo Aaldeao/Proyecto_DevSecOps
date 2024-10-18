@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Añadir A Estudiante</title>
+</head>
+<body>
+    <h1>Formulario para ingresar a Estudiante</h1>
+    <form action="/Guardar_Estudiante" method="post" style="display: inline;">
+        <table>
+            <tr>
+                <td><label for="rut">RUT:</label></td>
+                <td><input type="text" id="rut" name="rut" required></td>
+            </tr>
+            <tr>
+                <td><label for="nombres">Nombres:</label></td>
+                <td><input type="text" id="nombres" name="nombres" required></td>
+            </tr>
+            <tr>
+                <td><label for="apellidos">Apellidos:</label></td>
+                <td><input type="text" id="apellidos" name="apellidos" required></td>
+            </tr>
+            <tr>
+                <td><label for="fechaNacimiento">Fecha de Nacimiento:</label></td>
+                <td><input type="date" id="fechaNacimiento" name="fechaNacimiento" required></td>
+            </tr>
+            <tr>
+                <td><label for="tipoColegio">Tipo de colegio:</label></td>
+                <td>
+                    <select id="tipoColegio" name="tipoColegio" required>
+                        <option value="Seleccione..">Seleccione..</option>
+                        <option value="Municipal">Municipal</option>
+                        <option value="Subvencionado">Subvencionado</option>
+                        <option value="Privado">Privado</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="nombreColegio">Nombre de colegio:</label></td>
+                <td><input type="text" id="nombreColegio" name="nombreColegio" required></td>
+            </tr>
+            <tr>
+                <td><label for="anoEgreso">Año de Egreso:</label></td>
+                <td><input type="text" id="anoEgreso" name="anoEgreso" required></td>
+            </tr>
+            <tr>
+                <td><label for="tipoDepago">Tipo de pago:</label></td>
+                <td>
+                    <select id="tipoDepago" name="tipoDepago" required>
+                        <option value="Seleccione..">Seleccione..</option>
+                        <option value="Contado">Contado</option>
+                        <option value="Cuotas">Cuotas</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <button type="submit">Guardar Estudiante</button>
+    </form>
+    <form action="/Inicio"style="display: inline;">
+        <button type="submit">Volver al inicio</button>
+    </form>
+</body>
+</html>

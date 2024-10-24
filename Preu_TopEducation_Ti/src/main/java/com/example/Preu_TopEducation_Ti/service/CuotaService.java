@@ -117,7 +117,7 @@ public class CuotaService {
         Optional<CuotaEntity> optionalCuota = cuotaRepository.findById(idCuota);
         return optionalCuota.orElse(null); // El cual retorna la cuota o null si es que no la encuentra //
     }
-
+/*
     // Al apretar el boton pagar se cambie el estado de la cuota de pendiente a pagado o atrasada dependiendo de la fecha local //
     public void pagarCuota(CuotaEntity cuota){
         LocalDate fechaLocal = LocalDate.now();
@@ -240,5 +240,5 @@ public class CuotaService {
             return null;
         }
     }
-
+*/
 }

@@ -25,10 +25,6 @@ public class EstudianteController {
         return "index";
     }
 
-    @GetMapping("/")
-    public String Home(){
-        return "redirect:/login";
-    }
 
     @GetMapping("/Formulario") // muestra la vista del formulario y recibe los datos //
     public String IngresarEstudiante(Model model){

@@ -34,13 +34,13 @@ public class EstudianteService {
             double arancel = cuotaService.calculararancel(estudiante);
             String tipoDePago = estudiante.getTipoDepago();
             int cuotasPactadas = estudiante.getCantidad();
-            /*
+
             int cuotasPagadas = cuotaService.registrarPagada(estudiante.getRut());
             double montoPagado = cuotaService.montoCuotasPagadas(estudiante.getRut());
             int cuotasAtrasadas = cuotaService.registrarAtrasadas(estudiante.getRut());
             LocalDate fechaUltimacuota = cuotaService.obtenerFechaultimaCuota(estudiante.getRut());
             double saldoaPagar =cuotaService.montoApagar(estudiante.getRut());
-            */
+
 
             ReporteEntity reporte = new ReporteEntity();
             reporte.setExamenesRendidos(examenesRendidos);
@@ -51,14 +51,14 @@ public class EstudianteService {
             reporte.setTipoPago(tipoDePago);
             reporte.setCuotasPactadas(cuotasPactadas);
 
-            /*
+
             reporte.setCuotasPagadas(cuotasPagadas);
             reporte.setCuotasAtrasadas(cuotasAtrasadas);
             reporte.setMontoPagado(montoPagado);
             reporte.setSaldoaPagar(saldoaPagar);
             reporte.setFechaUltimo(fechaUltimacuota);
             reportes.add(reporte);
-            */
+
 
         }
         return reportes;

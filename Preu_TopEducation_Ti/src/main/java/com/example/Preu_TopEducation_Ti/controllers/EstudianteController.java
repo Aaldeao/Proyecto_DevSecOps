@@ -6,10 +6,7 @@ import com.example.Preu_TopEducation_Ti.service.EstudianteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
@@ -25,6 +22,10 @@ public class EstudianteController {
         return "index";
     }
 
+    @GetMapping("/")
+    public String Home(){
+        return "redirect:/login";
+    }
 
     @GetMapping("/Formulario") // muestra la vista del formulario y recibe los datos //
     public String IngresarEstudiante(Model model){
@@ -45,6 +46,11 @@ public class EstudianteController {
         return "Reporte";
 
     }
-
+    @PostMapping("/Eliminar_Estudiante")// procesa y guardarlo en la base de datos //
+    public String EliminarEstudiante(@RequestParam("rut") String rut){
+        estudianteService.EliminarEstudiante(rut);
+        return "redirect:/Reporte";
+    }
 
 }
+

@@ -23,6 +23,11 @@ public class EstudianteService {
         return estudianteRepository.save(estudiante);
     }
 
+    public void EliminarEstudiante(String rut){ // Elimina de la base de datos los datos del estudiante //
+        EstudianteEntity estudiante = estudianteRepository.findByRut(rut);
+        estudianteRepository.delete(estudiante);
+    }
+
     // Crea un reporte para cada estudiante con los atributos solicitados y los almacena ReporteEntity //
     public ArrayList<ReporteEntity> crearReporte(){
         ArrayList<EstudianteEntity> estudiantes = estudianteRepository.findAll();
@@ -58,8 +63,6 @@ public class EstudianteService {
             reporte.setSaldoaPagar(saldoaPagar);
             reporte.setFechaUltimo(fechaUltimacuota);
             reportes.add(reporte);
-
-
         }
         return reportes;
     }

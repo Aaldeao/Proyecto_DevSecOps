@@ -41,8 +41,14 @@
             <td th:text="${reporte.montoPagado}"></td>
             <td th:text="${reporte.saldoaPagar}"></td>
             <td th:text="${reporte.fechaUltimo}"></td>
+            <td>
+                <form th:action="@{/Eliminar_Estudiante}" method="post" style="display: inline-block; margin-right: 10px;">
+                    <input type="hidden" name="_method" value="DELETE" />
+                    <input type="hidden" th:name="rut" th:value="${reporte.rut}" />
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                </form>
+            </td>
         </tbody>
-
     </table>
 </div>
 <div class="d-flex justify-content-center align-items-center">

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class EstudianteService {
@@ -66,6 +67,11 @@ public class EstudianteService {
         }
         return reportes;
     }
+    public EstudianteEntity obtenerEstudiantePorRut(String rut) {
+        return estudianteRepository.findByRut(rut);
+    }
 
-
+    public void guardar(EstudianteEntity reporte) {
+        estudianteRepository.save(reporte);
+    }
 }

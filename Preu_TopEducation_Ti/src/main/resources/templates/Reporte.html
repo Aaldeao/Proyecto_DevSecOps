@@ -48,6 +48,13 @@
                     <button type="submit" class="btn btn-danger">Eliminar</button>
                 </form>
             </td>
+            <td>
+                <form th:action="@{/Modificar_Estudiante}" method="get">
+                    <input type="hidden" name="rut" th:value="${reporte.rut}">
+                    <button type="submit" class="btn btn-primary">Modificar</button>
+                </form>
+            </td>
+
         </tbody>
     </table>
 </div>

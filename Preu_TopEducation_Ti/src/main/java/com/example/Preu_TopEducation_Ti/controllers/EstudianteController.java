@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 @RequestMapping
@@ -49,6 +50,42 @@ public class EstudianteController {
     @PostMapping("/Eliminar_Estudiante")// procesa y guardarlo en la base de datos //
     public String EliminarEstudiante(@RequestParam("rut") String rut){
         estudianteService.EliminarEstudiante(rut);
+        return "redirect:/Reporte";
+    }
+    @GetMapping("/Modificar_Estudiante")
+    public String modificarEstudiante(@RequestParam("rut") String rut, Model model) {
+        EstudianteEntity reporte = estudianteService.obtenerEstudiantePorRut(rut);
+        if (reporte != null) {
+            model.addAttribute("reporte", reporte);
+        }
+        return "ModificarEstudiante";
+    }
+
+    @PostMapping("/Guardar_Cambios")
+    public String guardarCambios(
+            @RequestParam("rut") String rut,
+            @RequestParam("nombre") String nombre,
+            @RequestParam("apellidos") String apellidos,
+            @RequestParam("fechaNacimiento") String fechaNacimiento,
+            Model model) {
+
+        // Busca al estudiante existente por su RUT
+        EstudianteEntity estudiante = estudianteService.obtenerEstudiantePorRut(rut);
+
+        if (estudiante != null) {
+            // Actualiza solo los campos necesarios
+            estudiante.setNombres(nombre);
+            estudiante.setApellidos(apellidos);
+            estudiante.setFechaNacimiento(fechaNacimiento);
+
+            // Guarda los cambios en la base de datos
+            estudianteService.guardar(estudiante);
+
+            model.addAttribute("mensaje", "Estudiante modificado exitosamente");
+        } else {
+            model.addAttribute("error", "No se encontró el estudiante");
+        }
+
         return "redirect:/Reporte";
     }
 
